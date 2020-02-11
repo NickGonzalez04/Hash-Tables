@@ -51,7 +51,13 @@ class HashTable:
 
         Fill this in.
         '''
-        pass
+        index = self._hash_mod(key)
+
+        if self.storage[index] is not None:
+            print(f"Error collisions occured at {index}")
+        else:
+            self.storage[index] = (key, value)
+        return
 
 
 
